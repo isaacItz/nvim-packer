@@ -3,11 +3,19 @@ vim.g.maplocalleader = ' '
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.o.ruler = true
+vim.keymap.set('n', '<c-f>', ':NvimTreeFindFileToggle<CR>')
 
 vim.cmd([[
 set hidden
 set confirm
 set clipboard+=unnamedplus
+let NERDTreeQuitOnOpen=1
+
+" navigate easy between panes
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
 " transfer copied to system clipboard
 map "+p :r!xsel -o -sel clip
